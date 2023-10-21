@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our Picture Slideshow with Music</title>
+    <!-- Include Slick Carousel CSS and JS files -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+<body>
+    <div class="slider">
+        <div><img src="{{ url_for('static', filename='image1.jpg') }}" alt="Image 1"></div>
+        <div><img src="{{ url_for('static', filename='image2.jpg') }}" alt="Image 2"></div>
+        <div><img src="{{ url_for('static', filename='image3.jpg') }}" alt="Image 3"></div>
+        <!-- Add more images as needed -->
+    </div>
+
+    <!-- Add audio element to play music -->
+    <audio controls>
+        <source src="{{ url_for('static', filename='telugu_love.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                autoplay: true,
+                autoplaySpeed: 2000, // Set the duration of each slide
+            });
+        });
+    </script>
+</body>
+</html>
